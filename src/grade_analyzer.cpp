@@ -17,25 +17,21 @@ double calculateAverage(double total, int count){
 }
 
 char determineLetterGrade(double average) {
-    if (average >= 90) { // if avg greater than (>) or equal to (=) (ex >=) 90, show A
+    if (average >= A_MINIMUM) {
         return 'A';
-    } else if (average >= 80){ // if avg >= 80, show B
+    } else if (average >= B_MINIMUM) {
         return 'B';
-    } else if (average >= 70){ // if avg >= 70, show C
+    } else if (average >= C_MINIMUM) {
         return 'C';
-    } else if (average >= 60){ // if avg >= 60, show D
+    } else if (average >= D_MINIMUM) {
         return 'D';
-    } else{
-        return 'F'; // else, return F
+    } else {
+        return 'F';
     }
 }
 
 bool isPassing(double average) {
-    if (average >= 70){ // checks if average is greater than or equal to 70 and returns true
-        return true;
-    } else {
-    return false; // any other condition will return false
-    }
+    return average >= PASSING_MINIMUM;
 }
 
 bool isValidScore(double score) {
